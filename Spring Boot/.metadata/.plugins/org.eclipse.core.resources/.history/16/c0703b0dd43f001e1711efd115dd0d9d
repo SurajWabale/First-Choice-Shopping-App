@@ -1,0 +1,52 @@
+package com.example.demo.entities;
+import javax.persistence.*;
+
+	
+	@Entity
+	@Table(name="vendor")
+	public class Vendor {
+		@Id
+		@GeneratedValue(strategy = GenerationType.IDENTITY)
+		private int v_id;
+		@Column
+		private String v_name;
+		@Column
+		private String email;
+		@Column
+		private String contact;
+		@Column
+		private String address;
+		@Column
+		private String shop_licence_id;
+		@OneToOne
+		@JoinColumn(name="login_id")
+		Login login_id;
+	
+		public Vendor(String v_name, String email, String contact, String address, String shop_licence_id,
+				Login login_id) {
+			super();
+			this.v_name = v_name;
+			this.email = email;
+			this.contact = contact;
+			this.address = address;
+			this.shop_licence_id = shop_licence_id;
+			this.login_id = login_id;
+		}
+
+		public Vendor() {
+			super();
+			// TODO Auto-generated constructor stub
+		}
+		
+
+		@Override
+		public String toString() {
+			return "Vendor [ven_id=" + v_id + ", name=" + v_name + ", phone=" + contact + ",address=" + address
+					+ ", email=" + email + ", shop_licence_id=" + shop_licence_id+"]";
+		}
+		
+		
+		
+	}
+
+

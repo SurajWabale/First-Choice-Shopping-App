@@ -1,0 +1,112 @@
+package com.example.demo.entities;
+import javax.persistence.*;
+
+	
+	@Entity
+	@Table(name="vendor")
+	public class Vendor {
+		@Id
+		@GeneratedValue(strategy = GenerationType.IDENTITY)
+		private int ven_id;
+		@Column
+		private String name;
+		@Column
+		private String email;
+		@Column
+		private String contactno;
+		@Column
+		private String address;
+		@Column
+		private String shop_licence_id;
+		@OneToOne
+		@JoinColumn(name="reg_id")
+		Registration reg_id;
+	
+		public Vendor(String name, String email, String contactno, String address, String shop_licence_id,
+				Registration reg_id) {
+			super();
+			this.name = name;
+			this.email = email;
+			this.contactno = contactno;
+			this.address = address;
+			this.shop_licence_id = shop_licence_id;
+			this.reg_id = reg_id;
+		}
+
+		public Vendor() {
+			super();
+			// TODO Auto-generated constructor stub
+		}
+		
+		public Vendor(String name, String email, String contactno, String address, String shop_licence_id) {
+			super();
+			this.name = name;
+			this.email = email;
+			this.contactno = contactno;
+			this.address = address;
+			this.shop_licence_id = shop_licence_id;
+		}
+
+        
+
+
+
+		public int getVen_id() {
+			return ven_id;
+		}
+
+		public void setVen_id(int ven_id) {
+			this.ven_id = ven_id;
+		}
+
+		public String getName() {
+			return name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getEmail() {
+			return email;
+		}
+
+		public void setEmail(String email) {
+			this.email = email;
+		}
+
+		public String getContactno() {
+			return contactno;
+		}
+
+		public void setContactno(String contactno) {
+			this.contactno = contactno;
+		}
+
+		public String getAddress() {
+			return address;
+		}
+
+		public void setAddress(String address) {
+			this.address = address;
+		}
+
+		public String getShop_licence_id() {
+			return shop_licence_id;
+		}
+
+		public void setShop_licence_id(String shop_licence_id) {
+			this.shop_licence_id = shop_licence_id;
+		}
+
+		@Override
+		public String toString() {
+			return "Vendor [ven_id=" + ven_id + ", name=" + name + ", phone=" + contactno + ",address=" + address
+					+ ", email=" + email + ", shop_licence_id=" + shop_licence_id+"]";
+		}
+		
+		
+		
+	}
+
+

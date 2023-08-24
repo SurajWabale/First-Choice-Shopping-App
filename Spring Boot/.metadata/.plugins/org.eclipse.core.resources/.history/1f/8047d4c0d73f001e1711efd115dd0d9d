@@ -1,0 +1,97 @@
+package com.example.demo.entities;
+
+import javax.persistence.Column;
+
+public class VendorReg {
+	int reg_id;
+    String username;
+	String ppassword;
+	String rtype;
+	int ven_id;
+	String name;
+	String email;
+	String contactno;
+	String address;
+	String shop_licence_id;
+	public VendorReg() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public VendorReg(int reg_id, String username, String ppassword, String rtype, int ven_id, String name, String email,
+			String contactno, String address, String shop_licence_id) {
+		super();
+		this.reg_id = reg_id;
+		this.username = username;
+		this.ppassword = ppassword;
+		this.rtype = rtype;
+		this.ven_id = ven_id;
+		this.name = name;
+		this.email = email;
+		this.contactno = contactno;
+		this.address = address;
+		this.shop_licence_id = shop_licence_id;
+	}
+	public int getReg_id() {
+		return reg_id;
+	}
+	public void setReg_id(int reg_id) {
+		this.reg_id = reg_id;
+	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getPpassword() {
+		return ppassword;
+	}
+	public void setPpassword(String ppassword) {
+		this.ppassword = ppassword;
+	}
+	public String getRtype() {
+		return rtype;
+	}
+	public void setRtype(String rtype) {
+		this.rtype = rtype;
+	}
+	public int getV_id() {
+		return ven_id;
+	}
+	public void setV_id(int ven_id) {
+		this.ven_id = ven_id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getContactno() {
+		return contactno;
+	}
+	public void setContact(String contact) {
+		this.contactno = contactno;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public String getShop_licence_id() {
+		return shop_licence_id;
+	}
+	public void setShop_licence_id(String shop_licence_id) {
+		this.shop_licence_id = shop_licence_id;
+	}
+	
+	
+
+}

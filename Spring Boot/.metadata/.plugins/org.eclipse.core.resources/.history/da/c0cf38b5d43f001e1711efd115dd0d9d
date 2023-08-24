@@ -1,0 +1,19 @@
+package com.example.demo.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import org.springframework.stereotype.Service;
+
+import com.example.demo.entities.Registration;
+import com.example.demo.repositories.RegistrationRepo;
+
+@Service
+public class RegistrationSevice {
+	@Autowired
+	RegistrationRepo rrepo;
+	public Registration save(Registration r)
+	{
+		return rrepo.save(r);
+	}
+
+}

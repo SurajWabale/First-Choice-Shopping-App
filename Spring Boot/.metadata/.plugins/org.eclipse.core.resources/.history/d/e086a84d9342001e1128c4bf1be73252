@@ -1,0 +1,33 @@
+package com.example.demo.repositories;
+
+import java.util.List;
+
+
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+import com.example.demo.entities.Vendor;
+import com.example.demo.services.VendorServices;
+@Repository
+@Transactional
+public interface VendorReposiratory extends JpaRepository<Vendor, Integer> {
+
+	@Autowired
+	VendorServices vserv;
+	@Query("select v from Vendor v")
+	public List<Vendor>getallvendor();
+	
+	@PatchMapping("/approve/{v_id}/{v_status}")
+	public Vendor approvevendor(@PathVariable("v_id") int v_id, @PathVariable("status") Boolean status)
+	{
+		return vendorservice.approveVendor(v_id, status);
+	}
+	
+}
+

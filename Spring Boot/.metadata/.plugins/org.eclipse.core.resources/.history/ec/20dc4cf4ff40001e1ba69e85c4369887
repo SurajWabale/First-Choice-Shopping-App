@@ -1,0 +1,53 @@
+package com.example.demo.entities;
+
+
+@Table
+@Entity
+public class Product {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int p_id;
+	
+	private String pname;
+
+	private String pdesc;
+	
+	private String psize;
+	
+	private int prating;
+	
+	private int pqty;
+
+	private float pprice;
+
+	private String pbrand;
+
+	private String imageUrl;
+
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "c_id")
+	private Category cat;
+
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "v_id")
+	private Vendor vdr;
+
+	public Product() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public String toString() {
+		return "Product [p_id=" + p_id + ", pname=" + pname + ", pdesc=" + pdesc + ", psize=" + psize + ", prating="
+				+ prating + ", pqty=" + pqty + ", pprice=" + pprice + ", pbrand=" + pbrand + ",cat=" + cat + ", vdr=" + vdr;
+	}
+
+	public String getImageUrl() {
+		return imageUrl;
+	}
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
+}
